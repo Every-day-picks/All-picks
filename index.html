@@ -31,9 +31,29 @@ body {
   text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9); /* Enhanced shadow for title */
 }
 
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 products in a row */
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: repeat(1, 1fr); /* 1 product per row on mobile */
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 products per row on tablet */
+  }
+}
+
 .product-card {
   max-width: 380px;
-  margin: 0 auto 40px;
+  margin: 0 auto;
   padding: 28px 24px;
   background: rgba(173, 216, 230, 0.5); /* Light Blue with increased transparency for better background visibility */
   border-radius: 18px;
@@ -96,33 +116,35 @@ body {
 <body>
     <h1 class="brand-title">Everyday picks Marketing Page</h1>
     
-    <!-- Product 1 -->
-    <div class="product-card">
-        <h2 class="product-title">Advanced Amino Formula</h2>
-        <p class="product-subtitle">"Ultimate Amino Boost for Vitality"</p>
-        <img class="product-image" src="images/L69W6Z7Q.webp" alt="Advanced Amino Formula Image">
-        <a class="cta-button" href="https://www.digistore24.com/redir/472943/Everyday-picks/" target="_blank">Buy Now</a>
-        <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
+    <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+            <h2 class="product-title">Advanced Amino Formula</h2>
+            <p class="product-subtitle">"Ultimate Amino Boost for Vitality"</p>
+            <img class="product-image" src="images/L69W6Z7Q.webp" alt="Advanced Amino Formula Image">
+            <a class="cta-button" href="https://www.digistore24.com/redir/472943/Everyday-picks/" target="_blank">Buy Now</a>
+            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
+        </div>
+        
+        <!-- Product 2 -->
+        <div class="product-card">
+            <h2 class="product-title">SOS Solar Phone Charger</h2>
+            <p class="product-subtitle">No More Dead Batteries: Solar Phone Chargers Keep You Connected Anywhere, Anytime!</p>
+            <img class="product-image" src="images/OM0QY3XV.webp" alt="SOS Solar Phone Charger Image">
+            <a class="cta-button" href="https://andliberty.com/products/sos-solar-phone-charger-dg#aff=Everyday-picks" target="_blank">Buy Now</a>
+            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
+        </div>
+        
+        <!-- Product 3 -->
+        <div class="product-card">
+            <h2 class="product-title">The 24K Golden Rose</h2>
+            <p class="product-subtitle">the Ultimate Gesture of Love & Luxury Crafted for the extraordinary</p>
+            <img class="product-image" src="images/K5ZVJW7S.webp" alt="The 24K Golden Rose Image">
+            <a class="cta-button" href="https://www.checkout-ds24.com/redir/525359/Everyday-picks/" target="_blank">Buy Now</a>
+            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
+        </div>
+        
+        <!-- Add more products here by copying the above div -->
     </div>
-    
-    <!-- Product 2 -->
-    <div class="product-card">
-        <h2 class="product-title">SOS Solar Phone Charger</h2>
-        <p class="product-subtitle">No More Dead Batteries: Solar Phone Chargers Keep You Connected Anywhere, Anytime!</p>
-        <img class="product-image" src="images/OM0QY3XV.webp" alt="SOS Solar Phone Charger Image">
-        <a class="cta-button" href="https://andliberty.com/products/sos-solar-phone-charger-dg#aff=Everyday-picks" target="_blank">Buy Now</a>
-        <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
-    </div>
-    
-    <!-- Product 3 -->
-    <div class="product-card">
-        <h2 class="product-title">The 24K Golden Rose</h2>
-        <p class="product-subtitle">the Ultimate Gesture of Love & Luxury Crafted for the extraordinary</p>
-        <img class="product-image" src="images/K5ZVJW7S.webp" alt="The 24K Golden Rose Image">
-        <a class="cta-button" href="https://www.checkout-ds24.com/redir/525359/Everyday-picks/" target="_blank">Buy Now</a>
-        <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
-    </div>
-    
-    <!-- Add more products here by copying the above div -->
 </body>
 </html>
