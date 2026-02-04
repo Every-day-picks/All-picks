@@ -3,148 +3,216 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Everyday picks Marketing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <title>Everyday Picks | The Modern Curated List</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <style>
-* {
-  box-sizing: border-box;
-}
+        :root {
+            --bg: #fdfdfd;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --accent: #2563eb;
+            --card-border: #e2e8f0;
+            --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+        }
 
-body {
-  margin: 0;
-  padding: 32px 16px;
-  font-family: 'Roboto', sans-serif; /* Professional and stylish sans-serif */
-  background: #FFFFFF url('images/background.jpg') no-repeat center center fixed;
-  background-size: cover;
-  text-align: center;
-  color: #000000; /* Black */
-  min-height: 100vh;
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Subtle shadow for readability on background */
-}
+        * {
+            box-sizing: border-box;
+            transition: all 0.3s ease;
+        }
 
-.brand-title {
-  font-size: 60px;
-  font-weight: 700;
-  margin-bottom: 32px;
-  color: #0000CD; /* Medium Blue */
-  font-family: ' Playfair Display'; /* Very special cursive font for title */
-  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.9); /* Enhanced shadow for title */
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.5;
+        }
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 products in a row */
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
+        /* Hero Section */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(to bottom, #f1f5f9, #ffffff);
+        }
 
-@media (max-width: 768px) {
-  .product-grid {
-    grid-template-columns: repeat(1, 1fr); /* 1 product per row on mobile */
-  }
-}
+        .brand-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            margin: 0 0 10px 0;
+            letter-spacing: -1px;
+        }
 
-@media (min-width: 769px) and (max-width: 1024px) {
-  .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 products per row on tablet */
-  }
-}
+        .brand-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-.product-card {
-  max-width: 380px;
-  margin: 0 auto;
-  padding: 28px 24px;
-  background: rgba(173, 216, 230, 0.5); /* Light Blue with increased transparency for better background visibility */
-  border-radius: 18px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-  border: 1px solid #008080; /* Dark Teal border for depth */
-  backdrop-filter: blur(5px); /* Optional: adds a blur effect for better readability */
-}
+        /* Grid Layout */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+        }
 
-.product-title {
-  font-size: 22px;
-  font-weight: 700;
-  margin-bottom: 6px;
-  color: #0000CD; /* Medium Blue */
-  font-family: 'Roboto', sans-serif; /* Professional */
-}
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
 
-.product-subtitle {
-  font-size: 14px;
-  color: #008080; /* Dark Teal */
-  margin-bottom: 20px;
-  font-family: 'Roboto', sans-serif; /* Professional */
-}
+        /* Modern Product Card */
+        .product-card {
+            background: #ffffff;
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
 
-.product-image {
-  width: 100%;
-  max-width: 240px;
-  margin: 10px auto 24px;
-  display: block;
-}
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--accent);
+        }
 
-.cta-button {
-  display: block;
-  width: 100%;
-  padding: 14px 0;
-  background: linear-gradient(180deg, #0000CD, #008080); /* Medium Blue to Dark Teal gradient */
-  color: #FFFFFF; /* White */
-  text-decoration: none;
-  font-weight: 700;
-  border-radius: 32px;
-  font-size: 16px;
-  font-family: 'Roboto', sans-serif; /* Professional */
-}
+        /* Category Badge */
+        .category {
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 15px;
+            display: block;
+        }
 
-.cta-button:hover {
-  opacity: 0.95;
-}
+        .product-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            margin: 0 0 10px 0;
+        }
 
-.disclosure {
-  margin-top: 24px;
-  font-size: 12px;
-  color: #000000; /* Black */
-  max-width: 380px;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Roboto', sans-serif; /* Professional */
-  text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8); /* Shadow for readability */
-}
+        .product-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 25px;
+            min-height: 45px;
+        }
+
+        .image-box {
+            background: #f8fafc;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            aspect-ratio: 1/1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-image {
+            width: 80%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: var(--text-dark);
+            color: #ffffff;
+            text-decoration: none;
+            text-align: center;
+            font-weight: 700;
+            border-radius: 12px;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background: var(--accent);
+        }
+
+        .disclosure {
+            margin-top: 15px;
+            font-size: 11px;
+            color: #94a3b8;
+            text-align: center;
+            font-style: italic;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .product-grid { grid-template-columns: 1fr; }
+            header { padding: 40px 20px; }
+        }
     </style>
 </head>
 <body>
-    <h1 class="brand-title">Everyday picks Marketing Page</h1>
+
+    <header>
+        <h1 class="brand-title">Everyday Picks</h1>
+        <p class="brand-subtitle">Thoughtfully curated essentials for health, home, and luxury living. Quality tested, expertly selected.</p>
+    </header>
     
-    <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-            <h2 class="product-title">Advanced Amino Formula</h2>
-            <p class="product-subtitle">"Ultimate Amino Boost for Vitality"</p>
-            <img class="product-image" src="images/L69W6Z7Q.webp" alt="Advanced Amino Formula Image">
-            <a class="cta-button" href="https://www.digistore24.com/redir/472943/Everyday-picks/" target="_blank">Buy Now</a>
-            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
+    <div class="container">
+        <div class="product-grid">
+            
+            <div class="product-card">
+                <span class="category">Health & Wellness</span>
+                <h2 class="product-title">Advanced Amino Formula</h2>
+                <p class="product-subtitle">The ultimate metabolic boost for sustained energy and vitality.</p>
+                <div class="image-box">
+                    <img class="product-image" src="images/L69W6Z7Q.webp" alt="Amino Formula">
+                </div>
+                <a class="cta-button" href="https://www.digistore24.com/redir/472943/Everyday-picks/" target="_blank">View Exclusive Pricing</a>
+                <p class="disclosure">Affiliate link: May earn a commission</p>
+            </div>
+
+            <div class="product-card">
+                <span class="category">Outdoor & Survival</span>
+                <h2 class="product-title">SOS Solar Phone Charger</h2>
+                <p class="product-subtitle">Off-grid reliability. Keep your devices charged anywhere the sun shines.</p>
+                <div class="image-box">
+                    <img class="product-image" src="images/OM0QY3XV.webp" alt="Solar Charger">
+                </div>
+                <a class="cta-button" href="https://andliberty.com/products/sos-solar-phone-charger-dg#aff=Everyday-picks" target="_blank">Shop Official Store</a>
+                <p class="disclosure">Affiliate link: May earn a commission</p>
+            </div>
+
+            <div class="product-card">
+                <span class="category">Home & Gifting</span>
+                <h2 class="product-title">The 24K Golden Rose</h2>
+                <p class="product-subtitle">A permanent symbol of love and luxury, crafted with real 24K gold.</p>
+                <div class="image-box">
+                    <img class="product-image" src="images/K5ZVJW7S.webp" alt="Golden Rose">
+                </div>
+                <a class="cta-button" href="https://www.checkout-ds24.com/redir/525359/Everyday-picks/" target="_blank">Claim Special Offer</a>
+                <p class="disclosure">Affiliate link: May earn a commission</p>
+            </div>
+            
         </div>
-        
-        <!-- Product 2 -->
-        <div class="product-card">
-            <h2 class="product-title">SOS Solar Phone Charger</h2>
-            <p class="product-subtitle">No More Dead Batteries: Solar Phone Chargers Keep You Connected Anywhere, Anytime!</p>
-            <img class="product-image" src="images/OM0QY3XV.webp" alt="SOS Solar Phone Charger Image">
-            <a class="cta-button" href="https://andliberty.com/products/sos-solar-phone-charger-dg#aff=Everyday-picks" target="_blank">Buy Now</a>
-            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
-        </div>
-        
-        <!-- Product 3 -->
-        <div class="product-card">
-            <h2 class="product-title">The 24K Golden Rose</h2>
-            <p class="product-subtitle">the Ultimate Gesture of Love & Luxury Crafted for the extraordinary</p>
-            <img class="product-image" src="images/K5ZVJW7S.webp" alt="The 24K Golden Rose Image">
-            <a class="cta-button" href="https://www.checkout-ds24.com/redir/525359/Everyday-picks/" target="_blank">Buy Now</a>
-            <p class="disclosure">Affiliate disclosure: This link may earn a commission.</p>
-        </div>
-        
-        <!-- Add more products here by copying the above div -->
     </div>
+
+    <footer>
+        &copy; 2026 Everyday Picks. Hand-picked recommendations for the modern lifestyle.
+    </footer>
+
 </body>
 </html>
